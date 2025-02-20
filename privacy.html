@@ -5,82 +5,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Autofolio</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-light: #f8f9fa;
+            --text-color: #333;
+            --border-radius: 8px;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            padding: 0 20px;
         }
-        h1, h2 { color: #2c3e50; }
-        h2 { margin-top: 30px; }
+
         .nav {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 30px;
+            background: var(--primary-color);
+            padding: 0.7rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        .nav a {
-            margin-right: 20px;
-            color: #007bff;
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
             text-decoration: none;
         }
-        .nav a:hover { text-decoration: underline; }
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-            color: #666;
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
         }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 100px 0 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
         .last-updated {
             font-style: italic;
             color: #666;
             margin-bottom: 30px;
+            text-align: center;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-content { flex-direction: column; gap: 10px; }
+            .content { padding: 20px; }
+            .section { padding: 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-    </div>
+    <nav class="nav">
+        <div class="container nav-content">
+            <a href="index.html" class="nav-brand">Autofolio</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
 
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last Updated: February 20, 2025</p>
+    <section class="hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: February 20, 2025</p>
+        </div>
+    </section>
 
-    <h2>1. Introduction</h2>
-    <p>This privacy policy describes how Autofolio ("we", "us", or "our") collects, uses, and protects information obtained from authorized users of our application.</p>
+    <main class="container">
+        <div class="content">
+            <div class="section">
+                <h2>1. Introduction</h2>
+                <p>This privacy policy describes how Autofolio ("we", "us", or "our") collects, uses, and protects information obtained from authorized users of our application.</p>
+            </div>
 
-    <h2>2. Information Collection</h2>
-    <p>We collect the following types of information:</p>
-    <ul>
-        <li>Authentication information through Google OAuth</li>
-        <li>User profile information necessary for application functionality</li>
-    </ul>
+            <div class="section">
+                <h2>2. Information Collection</h2>
+                <p>We collect the following types of information:</p>
+                <ul>
+                    <li>Authentication information through Google OAuth</li>
+                    <li>User profile information necessary for application functionality</li>
+                </ul>
+            </div>
 
-    <h2>3. Use of Information</h2>
-    <p>The information we collect is used for:</p>
-    <ul>
-        <li>Providing and maintaining the service</li>
-        <li>Authentication and authorization</li>
-        <li>Improving user experience</li>
-        <li>Security monitoring and preventing unauthorized access</li>
-    </ul>
+            <div class="section">
+                <h2>3. Use of Information</h2>
+                <p>The information we collect is used for:</p>
+                <ul>
+                    <li>Providing and maintaining the service</li>
+                    <li>Authentication and authorization</li>
+                    <li>Preventing unauthorized access</li>
+                </ul>
+            </div>
 
-    <h2>4. Data Storage and Security</h2>
-    <p>We implement appropriate security measures to protect against unauthorized access, alteration, disclosure, or destruction of your information. Access to data is strictly limited to authorized team members.</p>
+            <div class="section">
+                <h2>4. Data Storage and Security</h2>
+                <p>We implement appropriate security measures to protect against unauthorized access, alteration, disclosure, or destruction of your information. Access to data is strictly limited to authorized team members.</p>
+            </div>
 
-    <h2>5. Third-Party Services</h2>
-    <p>Our application uses Google OAuth for authentication. When you use Google OAuth, you are subject to Google's privacy policy and terms of service.</p>
+            <div class="section">
+                <h2>5. Third-Party Services</h2>
+                <p>Our application uses Google OAuth for authentication. When you use Google OAuth, you are subject to Google's privacy policy and terms of service.</p>
+            </div>
 
-    <h2>6. Contact Information</h2>
-    <p>For any questions about this privacy policy or our data practices, please contact us at:</p>
-    <p>Email: ayyubi@berkeley.edu</p>
+            <div class="section">
+                <h2>6. Contact Information</h2>
+                <div class="contact-info">
+                    <p>For any questions about this privacy policy or our data practices, please contact us at:</p>
+                    <p>Email: <a href="mailto:ayyubi@berkeley.edu">ayyubi@berkeley.edu</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <div class="footer">
-        © 2025 Autofolio. All rights reserved.
-    </div>
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2025 Autofolio. All rights reserved.</p>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

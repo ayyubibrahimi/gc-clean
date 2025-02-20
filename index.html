@@ -3,56 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autofolio</title>
+    <title>Autofolio - CLEAN Team</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-light: #f8f9fa;
+            --text-color: #333;
+            --border-radius: 8px;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            padding: 0 20px;
         }
-        h1 { color: #2c3e50; }
-        h2 { color: #34495e; margin-top: 30px; }
+
         .nav {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 30px;
+            background: var(--primary-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        .nav a {
-            margin-right: 20px;
-            color: #007bff;
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
             text-decoration: none;
         }
-        .nav a:hover { text-decoration: underline; }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .access-section {
+            background: var(--bg-light);
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: var(--border-radius);
+        }
+
         .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-            color: #666;
+            background: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .features { grid-template-columns: 1fr; }
+            .nav-content { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-    </div>
+    <nav class="nav">
+        <div class="container nav-content">
+            <a href="index.html" class="nav-brand">Autofolio</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
 
-    <h1>Autofolio</h1>
-    <p>Autofolio is an internal tool designed to [yapyap].</p>
+    <section class="hero">
+        <div class="container">
+            <h1>Autofolio</h1>
+            <p>An internal tool created to streamline the organization of data collected through public records requests.</p>
+        </div>
+    </section>
 
-    <h2>About</h2>
-    <p>This application is developed and maintained by the CLEAN team.</p>
+    <main class="container">
+        <div class="features">
+            <div class="feature-card">
+                <h3>Data Organization</h3>
+                <p>Efficiently organize and categorize public records data.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Team Collaboration</h3>
+                <p>Work seamlessly with team members through our secure, collaborative platform designed for the CLEAN team.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Secure Access</h3>
+                <p>Protected by industry-standard security measures.</p>
+            </div>
+        </div>
 
-    <h2>Access</h2>
-    <p>Autofolio is a restricted-access tool available only to authorized team members.</p>
+        <section class="access-section">
+            <div class="container">
+                <h2>Restricted Access</h2>
+                <p>Autofolio is a restricted-access tool available only to authorized team members.</p>
+            </div>
+        </section>
+    </main>
 
-    <div class="footer">
-        © 2025 CLEAN. All rights reserved.
-    </div>
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2025 CLEAN. All rights reserved.</p>
+            <div class="nav-links">
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
